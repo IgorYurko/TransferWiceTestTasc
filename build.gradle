@@ -1,0 +1,30 @@
+apply plugin: 'java'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    jacksonVersion = '2.8.7'
+    lombokVersion = '1.16.12'
+    apacheLang3Version = '3.5'
+    okhttpVersion = '3.8.0'
+}
+
+dependencies {
+    compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    compile "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:${jacksonVersion}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
+
+    compile "org.apache.commons:commons-lang3:${apacheLang3Version}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    compile "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+
+}
